@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dog.css";
 import { useParams, Redirect } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 
 const Dog = ({ dogs }) => {
@@ -19,7 +20,7 @@ const Dog = ({ dogs }) => {
 					<CardSubtitle tag="h6" className="mb-2 text-muted">
 						Age: {findDog.age}
 					</CardSubtitle>
-					{findDog.facts.map((fact) => <CardText>{fact}</CardText>)}
+					{findDog.facts.map((fact) => <CardText key={uuid()}>{fact}</CardText>)}
 				</CardBody>
 			</Card>
 		</div>

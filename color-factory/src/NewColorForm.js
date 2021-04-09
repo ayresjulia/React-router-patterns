@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./NewColorForm.css";
 
 const NewColorForm = ({ addColor }) => {
-	const [ formData, setFormData ] = useState({ color: "#ffffff" });
+	const [ formData, setFormData ] = useState({ color: "" });
 	const history = useHistory();
 
 	const handleChange = (e) => {
@@ -14,10 +14,11 @@ const NewColorForm = ({ addColor }) => {
 			[name]: value
 		}));
 	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addColor({ ...formData });
-		setFormData({ color: "#ffffff" });
+		setFormData({ color: "" });
 		history.push("/colors");
 	};
 
@@ -25,13 +26,7 @@ const NewColorForm = ({ addColor }) => {
 		<Form className="Form" onSubmit={handleSubmit}>
 			<FormGroup>
 				<Label htmlFor="color">Pick a color</Label>
-				<Input
-					type="color"
-					name="color"
-					id="color"
-					value={formData.color}
-					onChange={handleChange}
-				/>
+				<Input name="color" id="color" value={formData.color} onChange={handleChange} />
 			</FormGroup>
 			<Button className="Form-btn">Add color</Button>
 

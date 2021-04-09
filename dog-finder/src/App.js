@@ -8,7 +8,7 @@ import duke from "./dogs/duke.jpg";
 import perry from "./dogs/perry.jpg";
 import tubby from "./dogs/tubby.jpg";
 
-function App ({ dogs }) {
+const App = ({ dogs }) => {
 	return (
 		<div className="App">
 			<BrowserRouter>
@@ -17,7 +17,7 @@ function App ({ dogs }) {
 			</BrowserRouter>
 		</div>
 	);
-}
+};
 
 App.defaultProps = {
 	dogs: [

@@ -3,7 +3,6 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 
 const Home = ({ colors }) => {
-	console.log(colors);
 	return (
 		<div>
 			<div>
