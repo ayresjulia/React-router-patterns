@@ -1,0 +1,8 @@
+.Dogs-body {
+	display: flex;
+	flex-direction: row;
+}
+.Dogs {
+	width: 400px;
+	margin: 20px;
+}
